@@ -1,0 +1,1 @@
+import './directive/index.js'
