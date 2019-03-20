@@ -1,12 +1,13 @@
 <template>
   <header class="main-header">
-    <p class="time">
-      {{ time }}
-    </p>
+    <div class="clock">
+      <p class="time">
+        {{ time }}
+      </p>
+    </div>
     <p class="week">
       {{ week }}
     </p>
-    <p>What's your main focus</p>
   </header>
 </template>
 
@@ -19,9 +20,21 @@ export default {
     }
   },
   mounted() {
+    var i = new Date().getMinutes()
+    if (i < 10) {
+      i = '0' + i
+    }
     setInterval(() => {
-      this.time = new Date().getHours() + ':' + new Date().getMinutes()
-      var day = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+      this.time = new Date().getHours() + ':' + i
+      var day = [
+        '星期日',
+        '星期一',
+        '星期二',
+        '星期三',
+        '星期四',
+        '星期五',
+        '星期六'
+      ]
       this.week = day[new Date().getDay()]
     })
   }
@@ -29,12 +42,20 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.main-header
-    text-align center
-    .time
-        font-size 70px
-        font-weight 500
-        color #fff
-    .week
-        color #fff
+.main-header {
+  text-align: center;
+
+  .time {
+    font-size: 10em;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    margin: 20px 0 0 0;
+  }
+
+  .week {
+    font-size: 200%;
+    color: #fff;
+  }
+}
 </style>

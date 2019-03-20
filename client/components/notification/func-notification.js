@@ -4,7 +4,7 @@ export default {
   extends: Notification,
   computed: {
     // 覆盖原组件中的 style 属性
-    style() {
+    style () {
       return {
         position: 'fixed',
         right: '20px',
@@ -12,11 +12,11 @@ export default {
       }
     }
   },
-  mounted() {
+  mounted () {
     this.createTimer()
   },
   methods: {
-    createTimer() {
+    createTimer () {
       console.log(this.autoClose)
       if (this.autoClose) {
         this.timer = setTimeout(() => {
@@ -24,19 +24,19 @@ export default {
         }, this.autoClose)
       }
     },
-    clearTimer() {
+    clearTimer () {
       if (this.timer) {
         clearTimeout(this.timer)
       }
     },
-    afterEnter() {
+    afterEnter () {
       this.height = this.$el.offsetHeight
     }
   },
-  beforeDestory() {
+  beforeDestory () {
     this.clearTimer()
   },
-  data() {
+  data () {
     return {
       verticalOffset: 0,
       height: 0,

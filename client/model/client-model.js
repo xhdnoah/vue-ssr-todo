@@ -28,25 +28,25 @@ const handleRequest = (request) => {
 }
 
 export default {
-  getAllTodos() {
+  getAllTodos () {
     return handleRequest(request.get('api/todos'))
   },
-  login(username, password) {
+  login (username, password) {
     return handleRequest(request.post('user/login', {
       username,
       password
     }))
   },
-  updateTodo(id, todo) {
+  updateTodo (id, todo) {
     return handleRequest(request.put(`api/todo/${id}`, todo))
   },
-  createTodo(todo) {
+  createTodo (todo) {
     return handleRequest(request.post('/api/todo', todo))
   },
-  deleteTodo(id) {
+  deleteTodo (id) {
     return handleRequest(request.delete(`/api/todo/${id}`))
   },
-  deleteAllCompleted(ids) {
+  deleteAllCompleted (ids) {
     return handleRequest(request.post('/api/delete/completed', {
       ids
     }))

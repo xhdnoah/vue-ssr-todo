@@ -8,7 +8,9 @@
       @click="handleToggle"
     >
     <label>
+      <!-- <div class="content"> -->
       {{ todo.content }}
+      <!-- </div> -->
     </label>
     <button
       class="destory"
@@ -51,12 +53,14 @@ export default {
   }
 
   label {
-    white-space: pre-line;
+    // white-space: pre-line;
     word-break: break-all;
     padding: 15px 60px 15px 15px;
     margin-left: 45px;
     display: block;
-    line-height: 1;
+    vertical-align: middle;
+    // autosize: true;
+    // line-height: 24px;
     transition: color 0.4s;
   }
 

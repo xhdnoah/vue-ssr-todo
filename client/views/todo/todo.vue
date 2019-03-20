@@ -3,7 +3,7 @@
     <div class="tab-container">
       <tabs
         :value="filter"
-        @change="handleChangeTabjjk"
+        @change="handleChangeTab"
       >
         <tab
           v-for="tab in stats"

@@ -13,14 +13,14 @@ const handleError = (err) => {
 }
 
 export default {
-  updateCountAsync(store, data) {
+  updateCountAsync (store, data) {
     setTimeout(() => {
       store.commit('updateCount', {
         num: data.num
       })
     }, data.time)
   },
-  fetchTodos({
+  fetchTodos ({
     commit
   }) {
     commit('startLoading')
@@ -34,7 +34,7 @@ export default {
         commit('endLoading')
       })
   },
-  login({
+  login ({
     commit
   }, {
     username,
@@ -57,7 +57,7 @@ export default {
         })
     })
   },
-  addTodo({
+  addTodo ({
     commit
   }, todo) {
     commit('startLoading')
@@ -73,7 +73,7 @@ export default {
         commit('endLoading')
       })
   },
-  updateTodo({
+  updateTodo ({
     commit
   }, {
     id,
@@ -92,7 +92,7 @@ export default {
         commit('endLoading')
       })
   },
-  deleteTodo({
+  deleteTodo ({
     commit
   }, id) {
     commit('startLoading')
@@ -108,7 +108,7 @@ export default {
         commit('endLoading')
       })
   },
-  deleteAllCompleted({
+  deleteAllCompleted ({
     commit,
     state
   }) {

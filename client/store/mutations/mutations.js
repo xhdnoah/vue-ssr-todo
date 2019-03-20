@@ -1,21 +1,21 @@
 export default {
-  updateCount(state, {
+  updateCount (state, {
     num,
     num2
   }) {
     console.log(num2)
     state.count = num
   },
-  fillTodos(state, todos) {
+  fillTodos (state, todos) {
     state.todos = todos
   },
-  doLogin(state, userInfo) {
+  doLogin (state, userInfo) {
     state.user = userInfo
   },
-  addTodo(state, todo) {
+  addTodo (state, todo) {
     state.todos.unshift(todo)
   },
-  updateTodo(state, {
+  updateTodo (state, {
     id,
     todo
   }) {
@@ -25,19 +25,19 @@ export default {
       todo
     )
   },
-  deleteTodo(state, id) {
+  deleteTodo (state, id) {
     state.todos.splice(
       state.todos.findIndex(t => t.id === id),
       1
     )
   },
-  deleteAllCompleted(state) {
+  deleteAllCompleted (state) {
     state.todos = state.todos.filter(t => !t.completed)
   },
-  startLoading(state) {
+  startLoading (state) {
     state.loading = true
   },
-  endLoading(state) {
+  endLoading (state) {
     state.loading = false
   }
 }

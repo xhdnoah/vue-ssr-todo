@@ -25,9 +25,9 @@
     >
       <RouterView />
     </Transition>
-    <button @click="notify">
+    <!-- <button @click="notify">
       click me
-    </button>
+    </button> -->
     <!-- <notification content="test notify" /> -->
     <Footer />
   </div>
